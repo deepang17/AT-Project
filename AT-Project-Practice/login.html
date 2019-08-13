@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<link href='https://fonts.googleapis.com/css?family=Lato|Roboto:400,900' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<title>Reventa.in</title>
+	<style>
+		
+		form {
+    width: 450px;
+    min-height: 500px;
+    height: auto;
+    border-radius: 5px;
+    margin: 20px;
+    box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+    padding: 2%;
+    background-image: linear-gradient(-225deg, rgba(207, 227, 243, 0.637) 50%, rgba(226, 195, 255, 0.849) 50%);
+}
+.container{
+  height:100%;
+ position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	
+    margin-top:  150px;
+}
+
+.btn {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+	margin:50px 0px 0px 50px;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: transparent;
+    cursor: pointer;
+    text-decoration:none;
+    font-family: 'Roboto', sans-serif;
+    font-weight:900;
+    font-size:17px;
+    letter-spacing: 0.045em;
+}
+/* 
+    background-color:  rgb(54, 4, 119) 0%; 
+	*/
+.btn svg {
+    position: absolute;
+    
+	top: 0;
+    left: 0;
+}
+
+.btn svg rect {
+    
+	stroke-width: 3;
+    stroke-dasharray: 353, 0;
+    stroke-dashoffset: 0;
+    -webkit-transition: all 600ms ease;
+    transition: all 600ms ease;
+}
+
+.btn span{
+  background:rgb(151, 3, 107) 0%;
+  
+  background: -moz-linear-gradient(left,  rgb(54, 4, 119) 0%, rgb(103, 16, 173) 100%);
+  background: -webkit-linear-gradient(left, rgb(54, 4, 119) 0%, rgb(103, 16, 173) 100%);
+  background: linear-gradient(to right,  rgb(54, 4, 119) 0%, rgb(103, 16, 173) 100%);  
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn:hover svg rect {
+    stroke-width: 4;
+    stroke-dasharray: 169, 598;
+    stroke-dashoffset: 548;
+}
+.input-item {
+    background: #fff;
+    color: #333;
+	margin:50px -1px 0px 50px;
+    padding: 14px 5px 16px 9px;
+    border-radius: 5px 0px 0px 5px;
+}
+input[class="form-input"]{
+    max-width: 180px;
+    height:16px;
+	
+    padding: 15px 5px 16px 9px;
+    font-size: 16px;
+    font-family: 'Abel', sans-serif;
+    color: #5E6472;
+  
+    outline: none;
+    border: none;
+  
+    border-radius: 0px 5px 5px 0px;
+    transition: 0.2s linear;
+    
+}
+
+input[id="txt-input"] {max-width: 500px;
+    height:16px;
+	
+    padding: 15px 5px 16px 9px;
+    font-size: 16px;
+    font-family: 'Abel', sans-serif;
+    color: #5E6472;
+  
+    outline: none;
+    border: none;
+  
+    border-radius: 0px 5px 5px 0px;
+    transition: 0.2s linear;
+}
+#eye {
+    background: #fff;
+    color: #333;
+  
+	margin:0px 0px 0px -6px;
+    padding: 14px 5px 17px 5px;
+    border-radius: 0px 5px 5px 0px;
+  
+    position: relative;
+    right: 1%;
+    top: -.2%;
+    z-index: 5;
+    
+    cursor: pointer;
+}
+input:focus {
+    transform: translateX(-2px);
+    border-radius: 5px;
+}
+
+	</style>
+	<script>
+ function viewPassword()
+{
+  var passwordInput = document.getElementById('password-field');
+  var passStatus = document.getElementById('eye');
+ 
+  if (passwordInput.type == 'password'){
+    passwordInput.type='text';
+    passStatus.className='fa fa-eye-slash';
+    
+  }
+  else{
+    passwordInput.type='password';
+    passStatus.className='fa fa-eye';
+  }
+}
+
+$(document).ready(function(){
+    $(".fa-user-circle").css("color","darkblue");
+    $(".fa-key").css("color","darkblue");
+        $(".fa-eye").css("color","darkblue");
+        
+    $("#txt-input").focus(function(){
+        $(".fa-user-circle").css("color","red");
+        
+    }).blur(function() {
+        $(".fa-user-circle").css("color","darkblue");
+        
+    });
+
+    $("#password-field").focus(function(){
+        $(".fa-key").css("color","red");
+        
+    }).blur(function() {
+        $(".fa-key").css("color","darkblue");
+        
+    });
+    $("#eye").click(function(){
+        if($(this).hasClass("fa-eye-slash")){
+            $(".fa-eye-slash").css("color","red");
+    }
+        if($(this).hasClass("fa-eye")){
+            $(".fa-eye").css("color","darkblue");
+    }
+    });
+
+});
+	</script>
+
+</head>
+<body>
+	<div class="container">
+	<form method="get" action="login.html" id="my_form">
+	<br><br>
+	<span class="input-item">
+			<i class="fa fa-user-circle"></i>
+		  </span>
+		  <input id="txt-input" class="password" type="text" placeholder="@UserName" required>
+	  <br><br><br>  <span class="input-item">
+			<i class="fa fa-key"></i>
+		   </span>
+		  <input class="form-input" type="password" placeholder="Password"  id="password-field"  name="password" required>
+		  <span>
+				<i class="fa fa-eye" aria-hidden="true" onClick="viewPassword()" id="eye"></i>
+			 </span>
+<br>  
+<br>
+<a href="javascript:{}" onclick="document.getElementById('my_form').submit(); return false;" class="btn">
+  <svg width="210" height="60">
+    <defs>
+        <linearGradient id="grad1">
+            <stop offset="0%" stop-color="rgb(151, 3, 107)"/>
+            <stop offset="100%" stop-color="rgb(103, 16, 173)" />
+        </linearGradient>
+	</defs>
+	
+     <rect x="5" y="5" rx="25" fill="none" stroke="url(#grad1)" width="200" height="50"></rect>
+  </svg>
+    <span>Login</span>
+</a>	</form>
+
+</div>
+</body>
+</html>
