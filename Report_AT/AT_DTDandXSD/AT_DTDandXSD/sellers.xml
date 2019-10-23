@@ -1,0 +1,26 @@
+<!DOCTYPE sellers
+[
+    <!ELEMENT sellers (seller+)>
+    <!ELEMENT seller (name,phone_no,email,address,img_link,latitude,longitude)>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT phone_no (#PCDATA)>
+    <!ELEMENT email (#PCDATA)>
+    <!ELEMENT address (#PCDATA)>
+    <!ELEMENT img_link (#PCDATA)>
+    <!ELEMENT latitude (#PCDATA)>
+    <!ELEMENT longitude (#PCDATA)>
+    <!ATTLIST seller id ID #REQUIRED>
+]
+>
+<sellers>
+	<seller id="s_01">
+		<name>Deepang</name>
+		<phone_no>9157339363</phone_no>
+		<email>deepangraval12345@gmail.com</email>
+		<address>603, Santolina</address>
+		<img_link>deepang.jpg</img_link>
+		<latitude>19.200</latitude>
+		<longitude>20.009</longitude>
+	</seller>
+</sellers>
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/css" href="productscss.css"?>
+<!DOCTYPE products
+[
+    <!ELEMENT products (product+)>
+    <!ELEMENT product (s_id,name,price,type,description,img_link)>
+    <!ELEMENT s_id (#PCDATA)>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT price (#PCDATA)>
+    <!ELEMENT type (#PCDATA)>
+    <!ELEMENT dscription (#PCDATA)>
+    <!ELEMENT img_link (#PCDATA)>
+    <!ATTLIST product p_id ID #REQUIRED>
+]
+>
+<products>
+
+	<product p_id="p_01">
+		<s_id>01</s_id>
+		<name>node.js</name>
+		<price>5000</price>
+		<type>Book</type>
+		<description><![CDATA[This book is based on learning of node.js]]></description>
+		<img_link>book.jpg</img_link>
+	</product>
+	
+	<product p_id="p_02">
+		<s_id>02</s_id>
+		<name>Redmi Note 4</name>
+		<price>5000</price>
+		<type>Refurbished</type>
+		<description><![CDATA[This is the phone provided by MI]]></description>
+		<img_link>redmi.jpg</img_link>
+	</product>
+	
+</products>

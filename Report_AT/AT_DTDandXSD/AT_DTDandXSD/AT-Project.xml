@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customers
+[
+    <!ELEMENT customers (customer+)>
+    <!ELEMENT customer (name,phone_no,email,address,img_link)>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT phone_no (#PCDATA)>
+    <!ELEMENT email (#PCDATA)>
+    <!ELEMENT address (#PCDATA)>
+    <!ELEMENT img_link (#PCDATA)>
+    <!ATTLIST customer id ID #REQUIRED>
+]
+>
+<customers>
+	<customer id="c_01">
+		<name>Deepang</name>
+		<phone_no>9157339363</phone_no>
+		<email>deepangraval12345@gmail.com</email>
+		<address>603, Santolina</address>
+		<img_link>deepang.jpg</img_link>
+	</customer>
+</customers>
+
