@@ -1,0 +1,108 @@
+<body>
+<div style="background-color: grey;">
+<head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="../css/bootstrap.css">
+        <link rel="stylesheet" href="../vendor/linericon/style.css">
+      <link rel="stylesheet" href="../css/themify-icons.css">
+      <link rel="stylesheet" href="../vendor/owl-carousel/owl.theme.default.min.css">
+        <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
+        <link rel="stylesheet" href="../vendor/owl-carousel/owl.carousel.min.css">
+        <link rel="stylesheet" href="../css/magnific-popup.css">
+        <link rel="stylesheet" href="../vendor/nice-select/css/nice-select.css">
+        <!-- main css -->
+        <link rel="stylesheet" href="../css/style.css">
+        
+        <style>
+            img{
+                width: 500px;
+                height: 500px;
+            }
+            h1{
+                font-size:70px;
+                color: white;
+                margin-left: 200px;
+            }
+            .hero-info{
+                margin-top:50px;
+            }
+            h3{
+                font-size: 50px;
+                color: white;
+            }
+            ul{
+                padding: 10px;
+            }
+            span{
+                font-size: 30px;
+            }
+        </style>
+    </head>
+    <div style="margin-top: 100px; margin-left: 80px; color: white;">
+            <section ng-if="!vm.auth.isAuthenticated()">
+                YOU NEED TO LOGIN FIRST.
+            </section>
+<section ng-if="vm.auth.isAuthenticated()">
+        <section class="hero-section spad">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-10 offset-xl-1">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="hero-text">
+                                        <h1>{{vm.profile.nickname}}</h1>
+                                    </div>
+                                    <div class="hero-info">
+                                        <h3>General Info</h3>
+                                        <ul>
+                                            <div style="margin-top: 20px;">
+                                            <div style="margin-bottom: 20px;">
+                                            <li><span>Address:  </span></li>
+                                            <p ng-if="vm.address">{{vm.address}}</p>
+                                            <p ng-if="!vm.address">PLEASE CLICK VERIFY FIRST</p>
+                                            </div>
+                                            <div style="margin-bottom: 20px;">
+                                            <li><span>E-mail:  </span></li>
+                                            {{vm.profile.name}}
+                                            </div>
+                                            <div style="margin-bottom: 20px;">
+                                            <li><span>Phone: </span></li>
+                                            <p ng-if="vm.phone">{{vm.phone}}</p>
+                                            <p ng-if="!vm.phone">PLEASE CLICK VERIFY FIRST</p>
+                                            </div>
+                                        </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <br/><br/><br/><br/><br/>
+                                    <figure class="hero-image">
+                                            <p ng-if="vm.picture"><img src="{{vm.picture}}"></p>
+                                            <p ng-if="!vm.picture"><img src="{{vm.profile.picture}}"></p>
+                                    </figure>
+                                </div>
+                                
+                                <div>
+                                    
+<form method="POST" action="abcd">
+        <input name="email" value={{vm.profile.name}} hidden> 
+        <input type="submit" id="btn" value="Verify" name="submit" style="background-color: tomato; width:240px"/>
+    </form>
+                                        <button ui-sref="updateform" style="background-color: tomato;">Update Details</button>
+                                        <button ui-sref="productlist" style="background-color: tomato;">Your Products</button>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            </div>
+</section>
+<br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</div>
+</body>
+<script src="../vendor/jquery/jquery.js"></script>

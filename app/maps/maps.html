@@ -1,0 +1,31 @@
+<div style="margin-top: 50px;">
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+  
+  localStorage.setItem('a', 22.6798311);
+  localStorage.setItem('b', 72.8802908);
+}
+function getMap(){
+	window.location.href = "https://www.google.com/maps/?q="+localStorage.getItem('a')+","+localStorage.getItem('b');
+}
+</script>
+<button onclick="getMap()">Get Maps</button>
+</div>

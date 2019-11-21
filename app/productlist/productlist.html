@@ -1,0 +1,62 @@
+
+<style> 
+
+        #main {
+            
+            margin-top: 30px;
+            margin-left: 150px;
+            width:80%;
+        }
+        #leftbox { 
+            float:left; 
+            width:25%;
+            text-align: center;
+            margin-top: 30px;
+            border-left: 5px solid black;
+            border-top: 5px solid black;
+            border-bottom: 5px solid black;
+            font-size: 30px;
+
+        } 
+        #middlebox{ 
+            float:left; 
+            width:50%; 
+            text-align: center;
+            margin-top: 30px;
+            border-top: 5px solid black;
+            border-bottom: 5px solid black;
+            font-size: 30px;
+        } 
+        #rightbox{ 
+            float:right; 
+            width:25%; 
+            text-align: center;
+            margin-top: 30px;
+            border-right: 5px solid black;
+            border-top: 5px solid black;
+            border-bottom: 5px solid black;
+            font-size: 30px;
+        } 
+        h1{ 
+            color:green; 
+            text-align:center; 
+        } 
+    </style> 
+    <div style="margin-top: 80px;">
+    <div ng-repeat = "arry in vm.dig.data" id="main">
+            <div id="leftbox"><p style="margin-bottom: 20px;">{{arry.pname}}</p></div>
+            <div id="middlebox"><p style="margin-bottom: 20px;">{{arry.price}}</p></div>
+            <form action="del" method="POST">
+            <div id="rightbox"><button id="nm" type="submit" style="margin-bottom: 14px; background-color: tomato;">Delete</button></div>
+            </form>
+        </div>
+    <!-- <div class=""></div> -->
+    <!-- <div ng-repeat = "arr in vm.cars" id="main">
+        <div id="leftbox">Image {{arr}}</div>
+        <div id="middlebox">Name</div>
+        <div id="rightbox">Update</div>
+    </div> -->
+    </div>
+    <div>
+        <button ui-sref="addproduct" style="margin-left: 750px; margin-top: 50px; background-color: tomato;">Add Product</button>
+    </div>

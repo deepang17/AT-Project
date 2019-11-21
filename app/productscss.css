@@ -1,0 +1,21 @@
+product  
+{  
+background-color: #ff0000;
+font-size:50px;
+}  
+name,type,img_link  
+{  
+font-size:25px;  
+display:block;  
+color: black;
+background-color: #00ff00;  
+margin-left: 50px;  
+} 
+price,description
+{
+font-size:25px;  
+display:block;  
+color: black;
+background-color: cyan;  
+margin-left: 50px;  
+}  
